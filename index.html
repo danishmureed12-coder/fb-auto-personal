@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FB ID Creator Pro v3.0 | By Danish Mureed</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-main: #070a0f;
+            --bg-card: #0d131f;
+            --primary: #7c5cff;
+            --primary-glow: rgba(124, 92, 255, 0.4);
+            --secondary: #10b981;
+            --secondary-glow: rgba(16, 185, 129, 0.4);
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(124, 92, 255, 0.08), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(16, 185, 129, 0.08), transparent 25%);
+        }
+
+        /* --- NAVBAR --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(7, 10, 15, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: var(--primary);
+        }
+
+        .dev-badge {
+            background: rgba(124, 92, 255, 0.1);
+            border: 1px solid var(--primary);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #d9d0ff;
+            letter-spacing: 1px;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 20px 60px;
+            position: relative;
+        }
+
+        .hero-badge {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--secondary);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .hero h1 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 5rem;
+            line-height: 1.1;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(to right, var(--primary), #39d0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        /* --- GLOWING DOWNLOAD BUTTON --- */
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: #fff;
+            font-size: 18px;
+            font-weight: 700;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 30px var(--secondary-glow);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.6);
+            border-color: #34d399;
+        }
+
+        .download-btn i {
+            font-size: 24px;
+        }
+
+        /* --- FEATURES SECTION --- */
+        .features-section {
+            padding: 80px 5%;
+            background: #090d14;
+            position: relative;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 60px;
+            color: #fff;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 35px 30px;
+            border-radius: 20px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(124, 92, 255, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .icon-wrapper {
+            width: 60px;
+            height: 60px;
+            background: rgba(124, 92, 255, 0.1);
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 26px;
+            color: var(--primary);
+            margin-bottom: 25px;
+            border: 1px solid rgba(124, 92, 255, 0.2);
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Special highlights for specific cards */
+        .card-green .icon-wrapper { color: var(--secondary); background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.2); }
+        .card-blue .icon-wrapper { color: #39d0ff; background: rgba(57, 208, 255, 0.1); border-color: rgba(57, 208, 255, 0.2); }
+        .card-orange .icon-wrapper { color: #f59e0b; background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.2); }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #05070a;
+            padding: 40px 5%;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .contact-info {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: #0d131f;
+            padding: 10px 25px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 20px;
+        }
+
+        .contact-info i {
+            color: var(--secondary);
+            font-size: 20px;
+        }
+
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3rem; }
+            .hero p { font-size: 1rem; }
+            .logo { font-size: 20px; }
+            .dev-badge { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">
+            <i class="fa-solid fa-bolt"></i> FB ID CREATOR PRO
+        </div>
+        <div class="dev-badge">
+            <i class="fa-solid fa-code"></i> By Danish Mureed
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-badge">v3.0 Ultimate Automation Edition</div>
+        <h1>The Most Powerful <br><span>FB Farming Engine</span></h1>
+        <p>Fully automated Page Creation, Auto Admin Access Transfer, Human Warm-Up Scrolling, Auto 2FA Bypass, and 10-Year Cookies Generator. Build, warm up, and control hundreds of assets with zero touch.</p>
+        
+        <!-- MEDIAFIRE DOWNLOAD LINK HERE -->
+        <a href="https://www.mediafire.com/file/ncwuwso8up1rapc/FB_ID_Creator_Personal_setup.exe/file" class="download-btn floating-element" target="_blank">
+            <i class="fa-solid fa-cloud-arrow-down"></i>
+            Download via MediaFire
+        </a>
+    </section>
+
+    <!-- FEATURES GRID -->
+    <section class="features-section">
+        <h2 class="section-title">Lethal Automation Features</h2>
+        <div class="features-grid">
+
+            <!-- Card 1 -->
+            <div class="feature-card">
+                <div class="icon-wrapper"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3>Advanced ID Engine & 2FA</h3>
+                <p>Bypasses manual logins completely. Automatically fetches OTPs via 2fa.live, handles Captchas, and extracts 10-Year Permanent Cookies (JSON & Text) upon successful login.</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="feature-card card-green">
+                <div class="icon-wrapper"><i class="fa-solid fa-crown"></i></div>
+                <h3>Auto Page Access Transfer</h3>
+                <p>Creates pages and automatically transfers Full Control (Admin Access) to your Main Target Profile. Auto-handles password re-entry and security prompts during the transfer.</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="feature-card card-blue">
+                <div class="icon-wrapper"><i class="fa-solid fa-layer-group"></i></div>
+                <h3>Day 2+ Smart Multi-Farming</h3>
+                <p>Drop 500 IDs at once! The engine uses a 5-by-5 smart batch queue to process accounts without crashing your RAM. Auto-closes finished browsers and loads the next batch.</p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="feature-card card-orange">
+                <div class="icon-wrapper"><i class="fa-solid fa-fire-flame-curved"></i></div>
+                <h3>Anti-Ban Warm-Up & Scrolling</h3>
+                <p>Simulates real human behavior. Features an internal timer to scroll the Home Feed using mouse wheels and arrow keys, pausing to read and auto-liking random posts.</p>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="feature-card">
+                <div class="icon-wrapper"><i class="fa-solid fa-image"></i></div>
+                <h3>Bulk Photo & Quote Poster</h3>
+                <p>Upload a folder of 50+ photos. The tool assigns a 100% unique photo to each ID, types a random motivational quote, forces Public privacy, and posts seamlessly.</p>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="feature-card card-green">
+                <div class="icon-wrapper"><i class="fa-solid fa-chart-line"></i></div>
+                <h3>Live Tracking Dashboard</h3>
+                <p>Monitor your farming empire in real-time. Features isolated boxes for Done, Retrying, and Dead IDs. Automatically exports today's successful IDs into a ready-to-use TXT file.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p style="color: #94a3b8; font-size: 14px; margin-bottom: 10px;">© 2026 FB ID Creator Pro. All rights reserved.</p>
+        <p style="color: #fff; font-weight: 600;">Developed & Engineered by Danish Mureed</p>
+        <div class="contact-info">
+            <i class="fa-brands fa-whatsapp"></i>
+            <a href="https://wa.me/923131442497" target="_blank">+92 313 1442497</a>
+        </div>
+    </footer>
+
+</body>
+</html>
